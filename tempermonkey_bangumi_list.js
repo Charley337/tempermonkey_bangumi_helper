@@ -32,11 +32,11 @@
             elem_node.setAttribute('id', `${elem_arr[i].getAttribute('id')}_resource_url`);
 
             elem_node.style.paddingTop = '10px';
-            elem_node.style.color = '#D8D8D8';
+            elem_node.style.color = '#2ea6ff';
 
             let elem_url = document.createElement('span');
 
-            elem_url.style.marginRight = '8px';
+            elem_url.style.marginRight = '3px';
             elem_url.style.cursor = 'pointer';
 
             elem_url.onmouseover = (function() {
@@ -52,15 +52,15 @@
                 elem_url.onclick = (function() {
                     window.open(this.getAttribute('href'), '_blank');
                 });
-                elem_url.innerHTML = '资源链接';
+                elem_url.innerHTML = '[资源链接]';
 
             } else {
-                elem_url.innerHTML = '未设置资源';
+                elem_url.innerHTML = '[未设置资源]';
             }
 
             let elem_modify = document.createElement('span');
 
-            elem_modify.innerHTML = '修改';
+            elem_modify.innerHTML = '[修改]';
 
             elem_modify.style.cursor = 'pointer';
 
@@ -81,14 +81,14 @@
 
                 if (input_url != null && input_url != '') {
                     window.localStorage[this.parentNode.getAttribute('id')] = input_url;
-                    this.parentNode.firstChild.innerHTML = '资源链接';
+                    this.parentNode.firstChild.innerHTML = '[资源链接]';
                     this.parentNode.firstChild.onclick = (function() {
                         window.open(this.getAttribute('href'), '_blank');
                     });
 
                 } else if (input_url != null && input_url == '') {
                     window.localStorage.removeItem(this.parentNode.getAttribute('id'));
-                    this.parentNode.firstChild.innerHTML = '未设置资源';
+                    this.parentNode.firstChild.innerHTML = '[未设置资源]';
                     this.parentNode.firstChild.onclick = null;
                 }
             });

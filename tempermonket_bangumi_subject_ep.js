@@ -50,12 +50,12 @@
     elem_resource_url.style.cursor = 'pointer';
 
     if (!window.localStorage[item_key]) {
-        elem_resource_url.innerHTML = '[未设置]';
+        elem_resource_url.innerHTML = '[未设置资源]';
         elem_resource_url.setAttribute('href', '');
         elem_resource_url.setAttribute('target', '_self');
 
     } else {
-        elem_resource_url.innerHTML = '[资源]';
+        elem_resource_url.innerHTML = '[资源链接]';
         elem_resource_url.setAttribute('href', window.localStorage[item_key]);
         elem_resource_url.setAttribute('target', '_blank');
     }
@@ -93,13 +93,13 @@
         
         if (input_url != null && input_url != '') {
             window.localStorage[item_key] = input_url;
-            elem_resource_url.innerHTML = '[资源]';
+            elem_resource_url.innerHTML = '[资源链接]';
             elem_resource_url.setAttribute('href', input_url);
             elem_resource_url.setAttribute('target', '_blank');
 
         } else if (input_url != null && input_url == '') {
             window.localStorage.removeItem(item_key);
-            elem_resource_url.innerHTML = '[未设置]';
+            elem_resource_url.innerHTML = '[未设置资源]';
             elem_resource_url.setAttribute('href', '');
             elem_resource_url.setAttribute('target', '_self');
         }
